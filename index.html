@@ -7,11 +7,42 @@
     <title>Notes</title>
     <style>
       body {
-        max-width: 680px;
-        margin: 80px auto;
-        padding: 0 24px;
+        margin: 0;
         color: #111;
         font: 18px/1.6 system-ui, sans-serif;
+      }
+
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      header {
+        border-bottom: 1px solid #eee;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      nav a {
+        color: #111;
+        font-size: 15px;
+        text-decoration: none;
+      }
+
+      .brand {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      main {
+        padding-top: 64px;
       }
 
       h1 {
@@ -26,7 +57,16 @@
     </style>
   </head>
   <body>
-    <h1>Notes</h1>
-    <p>My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.</p>
+    <header>
+      <nav class="wrap">
+        <a class="brand" href="/frontier-notes/">Notes</a>
+        <a href="https://github.com/aedikala1">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <h1>Notes</h1>
+      <p>My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.</p>
+    </main>
   </body>
 </html>
