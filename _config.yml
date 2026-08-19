@@ -1,0 +1,31 @@
+title: Frontier Notes
+author: Abishek Edikala
+description: Replication notes on frontier AI systems and controlled AI safety experiments.
+url: https://aedikala1.github.io
+baseurl: /frontier-notes
+repository: aedikala1/frontier-notes
+repository_url: https://github.com/aedikala1/frontier-notes
+
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: published
+      type: pages
+    values:
+      layout: post
+      kind: replication
+
+exclude:
+  - private-notes
+  - templates
+  - code
+  - results
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
