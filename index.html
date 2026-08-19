@@ -6,53 +6,101 @@
     <meta name="description" content="My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.">
     <title>Notes</title>
     <style>
+      :root {
+        --paper: #f5f3ee;
+        --ink: #1d1d1a;
+        --muted: #6d6b64;
+        --line: #d9d6cf;
+        --accent: #38584d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        color: #111;
+        min-height: 100vh;
+        background: var(--paper);
+        color: var(--ink);
         font: 18px/1.6 system-ui, sans-serif;
       }
 
       .wrap {
-        max-width: 680px;
+        width: min(780px, calc(100% - 48px));
         margin: 0 auto;
-        padding: 0 24px;
       }
 
       header {
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--line);
       }
 
       nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 18px;
-        padding-bottom: 18px;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       nav a {
-        color: #111;
+        color: var(--muted);
         font-size: 15px;
         text-decoration: none;
       }
 
+      nav a:hover {
+        color: var(--ink);
+      }
+
       .brand {
-        font-size: 18px;
+        color: var(--ink);
+        font-family: Georgia, serif;
+        font-size: 20px;
         font-weight: 700;
+        letter-spacing: -0.02em;
       }
 
       main {
-        padding-top: 64px;
+        padding-top: 112px;
+        padding-bottom: 120px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
       }
 
       h1 {
-        font-size: 32px;
-        margin-bottom: 8px;
+        margin: 0;
+        font-family: Georgia, serif;
+        font-size: clamp(64px, 12vw, 104px);
+        font-weight: 500;
+        letter-spacing: -0.055em;
+        line-height: 0.95;
       }
 
-      p {
-        margin-top: 0;
-        color: #666;
+      .description {
+        max-width: 620px;
+        margin: 34px 0 0;
+        color: var(--muted);
+        font-family: Georgia, serif;
+        font-size: clamp(20px, 3vw, 24px);
+        line-height: 1.55;
+      }
+
+      @media (max-width: 600px) {
+        .wrap {
+          width: min(100% - 32px, 780px);
+        }
+
+        main {
+          padding-top: 76px;
+        }
       }
     </style>
   </head>
@@ -65,8 +113,9 @@
     </header>
 
     <main class="wrap">
+      <p class="eyebrow">Abishek Edikala</p>
       <h1>Notes</h1>
-      <p>My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.</p>
+      <p class="description">My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.</p>
     </main>
   </body>
 </html>
