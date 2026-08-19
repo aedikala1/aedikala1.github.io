@@ -1,67 +1,24 @@
----
-layout: default
-title: Frontier Notes
-description: Replication notes on frontier AI systems and controlled AI safety experiments.
-permalink: /
----
-<section class="intro">
-  <p class="eyebrow">Abishek Edikala</p>
-  <h1>Frontier Notes</h1>
-  <p class="intro-lead">Replications of frontier AI systems and controlled experiments in AI safety.</p>
-  <p class="intro-detail">Small implementations, measured results, and the parts of the mechanism or behavior that only became clear after building and testing them.</p>
-</section>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notes</title>
+    <style>
+      body {
+        max-width: 680px;
+        margin: 80px auto;
+        padding: 0 24px;
+        color: #111;
+        font: 18px/1.6 system-ui, sans-serif;
+      }
 
-<aside class="priority-path" aria-labelledby="priority-path-title">
-  <p class="eyebrow">Build order</p>
-  <h2 id="priority-path-title">Systems depth, then safety experiments.</h2>
-  <ol>
-    <li>FlashAttention</li>
-    <li>Reward hacking → generalization</li>
-    <li>Agentic misalignment evals</li>
-    <li>GRPO / RLVR</li>
-    <li>Feature interpretability</li>
-  </ol>
-</aside>
-
-{% assign all_notes = site.pages | where: "kind", "replication" %}
-{% assign frontier_sections = "Inference|Post-training|Agents|World Models|Training Systems" | split: "|" %}
-{% assign safety_sections = "Alignment Experiments|Agentic Safety|Interpretability & Monitoring" | split: "|" %}
-
-<section class="track" aria-labelledby="frontier-ai-track">
-  <header class="track-header">
-    <p class="eyebrow">Track 01</p>
-    <h2 id="frontier-ai-track">Frontier AI</h2>
-    <p>Replications that make the systems, learning loops, agents, and world models behind modern AI less mysterious.</p>
-  </header>
-
-  <div class="note-index">
-    {% assign frontier_notes = all_notes | where: "track", "Frontier AI" %}
-    {% for section_name in frontier_sections %}
-      {% assign section_notes = frontier_notes | where: "section", section_name | sort: "order" %}
-      {% include note-section.html section_name=section_name section_notes=section_notes section_id=forloop.index track_id="frontier" %}
-    {% endfor %}
-  </div>
-</section>
-
-<section class="track track-safety" aria-labelledby="ai-safety-track">
-  <header class="track-header">
-    <p class="eyebrow">Track 02</p>
-    <h2 id="ai-safety-track">AI Safety</h2>
-    <p>Controlled experiments on misalignment, supervision, interpretability, monitoring, and behavioral change.</p>
-  </header>
-
-  <div class="note-index">
-    {% assign safety_notes = all_notes | where: "track", "AI Safety" %}
-    {% for section_name in safety_sections %}
-      {% assign section_notes = safety_notes | where: "section", section_name | sort: "order" %}
-      {% include note-section.html section_name=section_name section_notes=section_notes section_id=forloop.index track_id="safety" %}
-    {% endfor %}
-  </div>
-</section>
-
-<aside id="working-method" class="method-card">
-  <p class="eyebrow">Working method</p>
-  <p><strong>Private notes → implementation → results → reviewed write-up.</strong></p>
-  <p>The repository keeps the messy learning process local and publishes only the version backed by code and evidence.</p>
-  <span class="method-note">Raw notes never leave the local <code>private-notes/</code> directory.</span>
-</aside>
+      h1 {
+        font-size: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Notes</h1>
+  </body>
+</html>
