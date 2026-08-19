@@ -1,100 +1,21 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.">
-    <title>Abishek's Notes</title>
-    <style>
-      :root {
-        --paper: #f5f3ee;
-        --ink: #1d1d1a;
-        --muted: #6d6b64;
-        --line: #d9d6cf;
-      }
+---
+layout: default
+---
 
-      * {
-        box-sizing: border-box;
-      }
+<main class="wrap home">
+  <p class="description">{{ site.description }}</p>
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        background: var(--paper);
-        color: var(--ink);
-        font: 18px/1.6 system-ui, sans-serif;
-      }
-
-      .wrap {
-        width: min(780px, calc(100% - 48px));
-        margin: 0 auto;
-      }
-
-      header {
-        border-bottom: 1px solid var(--line);
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-
-      nav a {
-        color: var(--muted);
-        font-size: 15px;
-        text-decoration: none;
-      }
-
-      nav a:hover {
-        color: var(--ink);
-      }
-
-      .brand {
-        color: var(--ink);
-        font-family: Georgia, serif;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-      }
-
-      main {
-        padding-top: 88px;
-        padding-bottom: 120px;
-      }
-
-      .description {
-        max-width: 620px;
-        margin: 0;
-        color: var(--muted);
-        font-family: Georgia, serif;
-        font-size: clamp(18px, 2.2vw, 20px);
-        line-height: 1.55;
-      }
-
-      @media (max-width: 600px) {
-        .wrap {
-          width: min(100% - 32px, 780px);
-        }
-
-        main {
-          padding-top: 76px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav class="wrap">
-        <a class="brand" href="/">Abishek's Notes</a>
-        <a href="https://github.com/aedikala1">GitHub</a>
-      </nav>
-    </header>
-
-    <main class="wrap">
-      <p class="description">My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand.</p>
-    </main>
-  </body>
-</html>
+  {% if site.posts.size > 0 %}
+    <section class="posts" aria-label="Posts">
+      {% for post in site.posts %}
+        <article class="post-row">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.description %}
+            <p>{{ post.description }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </section>
+  {% endif %}
+</main>

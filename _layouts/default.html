@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <style>
+      :root {
+        --paper: #f5f3ee;
+        --ink: #1d1d1a;
+        --muted: #6d6b64;
+        --line: #d9d6cf;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--paper);
+        color: var(--ink);
+        font: 18px/1.65 system-ui, sans-serif;
+      }
+
+      .wrap {
+        width: min(780px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      body > header { border-bottom: 1px solid var(--line); }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+
+      a { color: inherit; }
+
+      nav a {
+        color: var(--muted);
+        font-size: 15px;
+        text-decoration: none;
+      }
+
+      nav a:hover { color: var(--ink); }
+
+      nav .brand {
+        color: var(--ink);
+        font-family: Georgia, serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      main { padding: 88px 0 120px; }
+
+      .description {
+        max-width: 620px;
+        margin: 0;
+        color: var(--muted);
+        font: clamp(18px, 2.2vw, 20px)/1.55 Georgia, serif;
+      }
+
+      .posts {
+        margin-top: 72px;
+        border-top: 1px solid var(--line);
+      }
+
+      .post-row {
+        padding: 26px 0 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .post-row > a {
+        display: block;
+        font: 700 25px/1.25 Georgia, serif;
+        letter-spacing: -0.015em;
+        text-decoration: none;
+      }
+
+      .post-row > a:hover { text-decoration: underline; }
+
+      time {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .post-row p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .back {
+        color: var(--muted);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .back:hover { color: var(--ink); }
+
+      .post-header { margin: 28px 0 56px; }
+
+      h1 {
+        margin: 0;
+        font: 700 clamp(38px, 7vw, 62px)/1.05 Georgia, serif;
+        letter-spacing: -0.035em;
+      }
+
+      .post-content { max-width: 700px; }
+      .post-content h2, .post-content h3 { font-family: Georgia, serif; line-height: 1.25; }
+      .post-content h2 { margin-top: 2.2em; }
+      .post-content h3 { margin-top: 1.8em; }
+      .post-content p, .post-content ul, .post-content ol { margin: 1.2em 0; }
+      .post-content img { max-width: 100%; height: auto; }
+      .post-content pre { overflow-x: auto; padding: 18px; background: #ebe8e1; }
+      .post-content code { font-size: 0.88em; }
+      .post-content blockquote { margin-left: 0; padding-left: 22px; border-left: 2px solid var(--line); color: var(--muted); }
+
+      @media (max-width: 600px) {
+        .wrap { width: min(100% - 32px, 780px); }
+        main { padding-top: 64px; }
+        .posts { margin-top: 56px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="wrap">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <a href="https://github.com/aedikala1">GitHub</a>
+      </nav>
+    </header>
+
+    {{ content }}
+  </body>
+</html>

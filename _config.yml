@@ -1,0 +1,5 @@
+title: "Abishek's Notes"
+description: "My learning notes on AI—papers I’m reading, systems I’m building, and ideas I’m trying to understand."
+url: "https://aedikala1.github.io"
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
